@@ -9,7 +9,7 @@ services:
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/taskmanager
       - NEXTAUTH_SECRET=supersecret
-      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_URL=https://task.murilloalves.com.br
     depends_on:
       - postgres
     deploy:

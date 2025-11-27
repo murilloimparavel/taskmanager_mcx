@@ -68,4 +68,4 @@ ENV PORT=3000
 # set hostname to localhost
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["node", "server.js"]
+CMD ["sh", "-c", "echo \"Starting TaskManager v$(grep '\"version\":' package.json | cut -d '\"' -f 4)...\" && node server.js"]

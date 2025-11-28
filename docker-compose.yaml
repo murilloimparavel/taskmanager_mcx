@@ -13,6 +13,8 @@ services:
       - AUTH_TRUST_HOST=true
     depends_on:
       - postgres
+    networks:
+      - ConfeiteiNet
     deploy:
       mode: replicated
       replicas: 1
@@ -40,6 +42,14 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ConfeiteiNet
 
 volumes:
   postgres_data:
+
+
+networks:
+  ConfeiteiNet:
+    external: true
+    name: ConfeiteiNet

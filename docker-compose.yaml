@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  app:
+  taskmanager:
     image: ghcr.io/murilloimparavel/taskmanager_mcx:latest
     restart: always
     ports:
@@ -10,6 +10,7 @@ services:
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/taskmanager
       - NEXTAUTH_SECRET=supersecret
       - NEXTAUTH_URL=https://task.murilloalves.com.br
+      - AUTH_TRUST_HOST=true
     depends_on:
       - postgres
     deploy:
